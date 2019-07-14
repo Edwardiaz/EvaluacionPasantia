@@ -31,6 +31,11 @@ public abstract class Categoria implements Proveedores {
 	}
 	
 	public List<String> mostrarCategoria(){	
+		boolean isRemoved = categoriaList.remove("Electrodomesticos");
+		boolean isRemoved2 = categoriaList.remove("Telefonos");
+		boolean isRemoved3 = categoriaList.remove("Computadoras");
+		boolean isRemoved4 = categoriaList.remove("Zapatos");
+		boolean isRemoved5 = categoriaList.remove("Ropa");
 		cateExistente();
 		return categoriaList;
 	}

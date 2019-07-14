@@ -12,21 +12,22 @@ public class Main {
 	public static void main(String[] args) {
 
 		String cate = "", productName;
-		double precio, total, extra;
-		int res = 0, opc = 0, cantidad, idProveedor = 0;
+		double precio, extra;
+		int  opc = 0, cantidad, idProveedor = 0;
 		boolean bool = true, bool2 = true;
-		;
 		List<Categoria> listaCategoria;
 		Productos proCate = new Productos();
 		Scanner sc = new Scanner(System.in);
-		Impuesto imp = new Impuesto();
+		
 		while (bool2 == true) {
 			// Menu Principal
 			System.out.println("*****Bienvenidos al Catalogo de productos*****");
 		System.out.println("Agregue productos cada vez que inicie el programa...");
 		System.out.println(
 				"Seleccione una opcion del menu:" + "\n1. Agregar productos" + "\n2. Mostrar productos por categoria"
-						+ "\n3. Mostrar todos los productos en un rango de precios" + "\n4. Agregar mas categorias");
+						+ "\n3. Mostrar todos los productos en un rango de precios" 
+						+ "\n4. Agregar mas categorias"
+						+ "\n5. Salir del programa");
 		opc = sc.nextInt();
 		switch (opc) {
 		case 1:
@@ -84,29 +85,15 @@ public class Main {
 		case 3:
 			break;
 		case 4:
-
 			// inicio agregado categoria
-			do {
-				try {
 					System.out.println("Ingrese la categoria :");
-					cate = sc.nextLine();
-					System.out.println("");
-					System.out.println("\nQuiere seguir agregando?"
-							+ "\nSi --> 1      Volver al menu --> Cualquier numero(excepto 1 :p)");
-					res = Integer.parseInt(sc.nextLine());
-					bool = true;
-
+					cate = sc.next();
 					proCate.agregarCategoria(cate);
-				} catch (Exception e) {
-					bool = false;
 					bool2 = true;
-				}
-			} while (res == 1 && bool == true);
-
 			System.out.println(proCate.mostrarCategoria());
 			// fin agregado categoria
-
 			break;
+		case 5: bool2=false;
 		default:
 			System.out.println("Opcion Erronea... Saliendo del programa");
 
