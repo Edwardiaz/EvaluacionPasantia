@@ -11,12 +11,13 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		String cate = "", productName;
-		double precio, extra;
+		String cate, productName, cat;
+		double precio = 0, extra, min = 0, max;
 		int  opc = 0, cantidad, idProveedor = 0;
 		boolean bool = true, bool2 = true;
 		List<Categoria> listaCategoria;
 		Productos proCate = new Productos();
+		Impuesto imp = new Impuesto();
 		Scanner sc = new Scanner(System.in);
 		
 		while (bool2 == true) {
@@ -61,7 +62,7 @@ public class Main {
 			System.out.println("***************************************");
 			System.out.println("\nDetalles de insercion: ");
 
-			System.out.println("producto guardado: " + proCate.agregarProducto(productName, precio, idCategoria));
+			System.out.println("producto guardado: " + Productos.agregarProducto(productName, precio, idCategoria));
 			System.out.println("Nombre producto: " + productName);
 			System.out.println("Precio: " + precio);
 			System.out.println("Categoria: " + proCate.mostrarCategoriaById(idCategoria));
@@ -81,8 +82,25 @@ public class Main {
 			bool2 = true;
 			break;
 		case 2:
+			System.out.println("*****Busqueda por CATEGORIA*****");
+			System.out.println("Ingrese una categoria: ");
+			cat = sc.next();
+			System.out.println("********************************");
+			System.out.println("los elementos por categoria son: " + proCate.productosByCategoria(cat));
+			System.out.println("********************************");
 			break;
 		case 3:
+			
+			System.out.println("*****Busqueda por rango de precio*****");
+			System.out.println("Ingrese un rango de precio: ");
+			System.out.println("Rango 1: ");
+			min = sc.nextDouble();
+//			System.out.println("Rango maximo: ");
+//			max = sc.nextDouble();
+			System.out.println("********************************");
+			System.out.println("los elementos son: " + Productos.productosByPrecio(min));
+			System.out.println("********************************");
+
 			break;
 		case 4:
 			// inicio agregado categoria
@@ -94,6 +112,7 @@ public class Main {
 			// fin agregado categoria
 			break;
 		case 5: bool2=false;
+		System.out.println("FINALIZANDO PROGRAMA");
 		default:
 			System.out.println("Opcion Erronea... Saliendo del programa");
 

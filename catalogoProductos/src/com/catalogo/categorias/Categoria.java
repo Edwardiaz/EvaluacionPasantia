@@ -10,7 +10,8 @@ public abstract class Categoria implements Proveedores {
 	
 	private String nombreCategoria = "";
 	private static String nombreProveedor;
-	private List<String> categoriaList = new ArrayList<>();
+	protected List<String> categoriaList = new ArrayList<>();
+	
 
 	public List<String> agregarCategoria(String cate) {
 
@@ -81,6 +82,14 @@ public abstract class Categoria implements Proveedores {
 
 	public static void setNombreProveedor(String nombreProveedor) {
 		Categoria.nombreProveedor = nombreProveedor;
+	}
+
+	public List<String> getCategoriaList() {
+		return categoriaList;
+	}
+
+	public void setCategoriaList(List<String> categoriaList) {
+		this.categoriaList = categoriaList;
 	}
 	
 	
