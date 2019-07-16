@@ -9,9 +9,9 @@ public class Productos extends Categoria {
 
 	static private List<String> productList = new ArrayList<>();
 	static private List<String> listaCategoria = new ArrayList<>();
-	static private List<Integer> precioList = new ArrayList<>();
+	static private List<Double> precioList = new ArrayList<>();
 	
-	public static List<String> agregarProducto(String pro, int precio, String categoria) {
+	public static List<String> agregarProducto(String pro, double precio, String categoria) {
 
 		precioList.add(precio);
 		listaCategoria.add(categoria);
@@ -22,7 +22,7 @@ public class Productos extends Categoria {
 	}
 
 	// filtro para la busqueda por precio
-	public static String productosByPrecio(int precio) {
+	public static String productosByPrecio(double precio) {
 		int y = 0;
 
 		if (precioList.contains(precio)) {
@@ -48,7 +48,8 @@ public class Productos extends Categoria {
 	/* *********************** */
 	//intento de filtro para varios elementos del array
 	/* *********************** */
-
+//modificar precio para que sea Int en todo el programa...
+	
 //	public static String productosByPrecio(int min, int max) {
 //	int m = 0, M = 0, y=0;
 //	if (precioList.contains(min) && precioList.contains(max)) {

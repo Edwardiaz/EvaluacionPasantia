@@ -12,7 +12,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		String cate, productName, cat;
-		int precio = 0;
+		double precio = 0;
 		double extra;
 		int opc = 0, cantidad, idProveedor = 0,  min = 0, max;
 		boolean bool = true, bool2 = true;
@@ -42,7 +42,7 @@ public class Main {
 				System.out.println("Nombre del producto: ");
 				productName = sc.next();
 				System.out.println("Precio del producto: ");
-				precio = sc.nextInt();
+				precio = sc.nextDouble();
 				System.out.println("Impuesto extra(aplicable con cantidades superiores a $75)");
 				extra = sc.nextDouble();
 				System.out.println("Cantidad de " + productName + " :");
