@@ -41,9 +41,10 @@ public abstract class Categoria implements Proveedores {
 		return categoriaList;
 	}
 	
-	public String mostrarCategoriaById(int id){	
-		categoriaList.get(id);
-		return categoriaList.get(id);
+	public String mostrarCategoriaById(String id){	
+//		categoriaList.get(id);
+//		return categoriaList.get(id);
+		return id;
 	}
 	
 	public static String seleccionarProveedor(int p) {
